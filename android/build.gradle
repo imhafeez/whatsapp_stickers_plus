@@ -2,7 +2,7 @@ group 'dev.applicazza.flutter.plugins.whatsapp_stickers_plus'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.8.10'
     repositories {
         google()
         jcenter()
@@ -27,6 +27,8 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 33
 
+    namespace = "dev.applicazza.flutter.plugins.whatsapp_stickers_plus"
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -35,6 +37,14 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
     }
 }
 
